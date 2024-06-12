@@ -11,8 +11,7 @@ if (!parsedEnv.success) {
     "Invalid environment variables",
     parsedEnv.error.flatten().fieldErrors
   );
+  throw new Error("Invalid environment variables.");
 }
-
-throw new Error("Invalid environment variables.");
 
 export const env = parsedEnv.data;
